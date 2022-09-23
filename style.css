@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+.section {
+    height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-family: 'Jost', sans-serif;
+}
+
+h3 {
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+#show_data {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    background: #dddddd;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 15px;
+    border-radius: 5px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#show_data div p {
+    border: 1px solid #fff;
+    padding: 3px 6px 3px 6px;
+    border-radius: 5px;
+}
+
+.all_input_area {
+    margin-top: 2rem;
+}
+
+.single_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.highlight {
+    border: 1px solid green !important;
+    color: green;
+    font-weight: 600;
+}
+
+.note {
+    color: green;
+    letter-spacing: 1px;
+}
+
+.btn, span, ::placeholder {
+    letter-spacing: 1px;
+}

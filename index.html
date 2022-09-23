@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversal | Md. Jahid Hasan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    </link>
+</head>
+
+<body>
+
+    <div class="container section">
+
+        <h3>Array Traversal</h3>
+
+        <div id="show_data"></div>
+
+        <div class="all_input_area">
+            <p class="note">Index counting should be start from 0</p>
+            <div class="single_input mb-3">
+                <div class="input-group">
+                    <span class="input-group-text">index</span>
+                    <input id="search_input_index" type="number" class="form-control" placeholder="Enter index of item" >
+                  </div>
+                  <button class="btn btn-dark" onclick="handleSearch()">Search</button>
+            </div>
+            <div class="single_input mb-3">
+                <div class="input-group">
+                    <span class="input-group-text">index</span>
+                    <input id="insert_input_index" type="number" class="form-control" placeholder="Enter index of item" aria-label="insert_input_index" aria-describedby="insert_input_index">
+                  </div>
+                <div class="input-group">
+                    <span class="input-group-text">Data</span>
+                    <input id="insert_input_data" type="number" class="form-control" placeholder="Enter index of item" aria-label="insert_input_data" aria-describedby="insert_input_data">
+                  </div>
+                  <button class="btn btn-dark" onclick="handleInsert()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
