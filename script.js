@@ -37,26 +37,29 @@ const handleInsert = () => {
     const insert_input_indexEl = document.getElementById('insert_input_index').value;
     const insert_input_dataEl = document.getElementById('insert_input_data').value;
 
-    if (insert_input_indexEl == '' || insert_input_indexEl > array.length || insert_input_indexEl < 0) {
+    const integer_input = parseInt(insert_input_indexEl);
+    const float_data = parseFloat(insert_input_dataEl);
+
+    if (insert_input_indexEl == '' || insert_input_indexEl > array.length || integer_input < 0) {
         alert(`Please add index between 0 to ${array.length}`)
     } else if (insert_input_dataEl == '') {
         alert("Please enter a number")
-    } else if (parseInt(insert_input_indexEl) >= 0 && parseInt(insert_input_indexEl) === array.length) {
+    } else if (integer_input >= 0 && integer_input === array.length) {
         const show_data = document.getElementById('show_data');
         show_data.innerHTML = "";
 
-        array[parseInt(insert_input_indexEl)] = parseFloat(insert_input_dataEl);
+        array[integer_input] = float_data;
         renderArray()
-    } else if (parseInt(insert_input_indexEl) >= 0 && parseInt(insert_input_indexEl) <= array.length) {
+    } else if (integer_input >= 0 && integer_input <= array.length) {
 
         for (let i = array.length - 1; i >= 0; i--) {
-            if (i >= parseInt(insert_input_indexEl)) {
+            if (i >= integer_input) {
                 array[i + 1] = array[i];
-                if (i === parseInt(insert_input_indexEl)) {
+                if (i === integer_input) {
                     const show_data = document.getElementById('show_data');
                     show_data.innerHTML = "";
 
-                    array[i] = parseFloat(insert_input_dataEl);
+                    array[i] = float_data;
                     renderArray()
                 }
             }
