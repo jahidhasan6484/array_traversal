@@ -1,14 +1,23 @@
 let array = [00, 10, 20, 30]
 
 const renderArray = () => {
-    array.forEach((data, index) => {
+    if (array.length > 0) {
+        array.forEach((data, index) => {
+            const show_data = document.getElementById('show_data');
+            const div = document.createElement("div");
+            div.innerHTML = `
+        <p id=${index}>${data}</p>
+        `;
+            show_data.appendChild(div);
+        })
+    } else {
         const show_data = document.getElementById('show_data');
         const div = document.createElement("div");
         div.innerHTML = `
-        <p id=${index}>${data}</p>
+        <p>No data left in the array</p>
         `;
         show_data.appendChild(div);
-    })
+    }
 }
 
 const handleSearch = () => {
@@ -66,5 +75,23 @@ const handleInsert = () => {
         }
     }
 }
+
+const handleRemove = () => {
+    const remove_input_indexEl = document.getElementById('remove_input_index').value;
+    const integer_input = parseInt(remove_input_indexEl);
+
+    if (integer_input >= 0 && integer_input < array.length) {
+        for (let i = integer_input; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        const show_data = document.getElementById('show_data');
+        show_data.innerHTML = "";
+        array.length = array.length - 1;
+        renderArray()
+    } else {
+        alert(`Please add index between 0 to ${array.length}`)
+    }
+}
+
 
 renderArray()
