@@ -20,7 +20,7 @@ const renderArray = () => {
     }
 }
 
-const handleSearch = () => {
+const handleSearchId = () => {
     const search_input_indexEl = document.getElementById('search_input_index').value;
 
     if (search_input_indexEl == '') {
@@ -40,6 +40,32 @@ const handleSearch = () => {
         }
     }
 
+}
+
+const handleSearchData = () => {
+    const search_input_dataEl = document.getElementById('search_input_data').value;
+    let found_data_index = -1;
+
+    if (search_input_dataEl == '') {
+        alert("Please enter a data")
+    } else {
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === parseFloat(search_input_dataEl)) {
+                found_data_index = i;
+                break;
+            }
+        }
+        if (found_data_index >= 0) {
+            const highlightEl = document.getElementById(found_data_index);
+            highlightEl.classList.add("highlight");
+
+            setTimeout(() => {
+                highlightEl.classList.remove("highlight");
+            }, 2000)
+        } else {
+            alert(`${parseFloat(search_input_dataEl)} is not found in the array`)
+        }
+    }
 }
 
 const handleInsert = () => {
